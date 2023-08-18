@@ -3,9 +3,7 @@ const {autoUpdater} = require('electron-updater');
 const path = require('path');
 const log = require('electron-log');
 log.transports.file.resolvePath = ()=> path.join(__dirname, 'logs/main.log');
-log.info("hello, log");
-log.warn("sompe problems") 
-
+log.log("application version", + app.getVersion());
 
 let win  
  function createWindow(){
@@ -24,6 +22,20 @@ let win
     log.info("update-available")
  })
 
+ 
+ autoUpdater.on("update-not-available",()=>{
+   log.info("update-not-available")
+})
+
+
+autoUpdater.on('error',()=>{
+   log.info('error');
+})
+
+autoUpdater.on('download-progress',(progress)=>{
+   log.info('download-progress');
+   log.info(progress);
+})
 
  autoUpdater.on('checking-for-update',()=>{
     log.info('checking-for-update');
@@ -35,6 +47,10 @@ let win
  })
 
 
+
+
+
  autoUpdater.on('update-downloaded',()=>{
     log.info('update-downloaded');
  })
+
