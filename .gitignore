@@ -1,2 +1,14 @@
 
 node_modules/
+*.pak
+*.dll
+*.dat
+*.html
+*.json
+*.txt
+*.asar
+*.exe
+*.bin
+*.msi
+*.yaml
+*.yml
