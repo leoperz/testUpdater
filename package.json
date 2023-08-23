@@ -1,6 +1,6 @@
 {
   "name": "uaup-test",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,34 +8,15 @@
     "build": "electron-builder build  --win --publish always"
   },
   
-  "repository":{
-    "type":"git",
-    "url": "https://github.com/leoperz/testUpdater"
-  } ,
- 
-  "build": {
-    "appId": "bancoProvincia.com",
-    "publish":{
-      "provider":"github",
-      "token":"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"
-    },
-    "productName": "test",
-    "directories": {
-      "output": "electron-build",
-      "buildResources": "build-assets"
-    },
-    "win": {
-      "icon": "assets/icon.ico",
-      "target": [
-        {
-          "target": "msi",
-          "arch": [
-            "ia32"
-          ]
-        }
-      ]
-    }
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/leoperz/testUpdater.git"
   },
+
+  "build": "electron-builder build  --win --publish never",
+  "deploy": "electron-builder build  --win --publish always",
+ 
+
   "keywords": [],
   "author": "LeoPerz",
   "license": "ISC",
